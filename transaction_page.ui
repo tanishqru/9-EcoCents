@@ -91,7 +91,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Company: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_upi">
+   <widget class="QPushButton" name="pushButton_rupees">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -111,7 +111,7 @@
      <string>Rupees</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_paytm">
+   <widget class="QPushButton" name="pushButton_points">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -375,8 +375,8 @@
    <zorder>label_background</zorder>
    <zorder>label</zorder>
    <zorder>label_company</zorder>
-   <zorder>pushButton_upi</zorder>
-   <zorder>pushButton_paytm</zorder>
+   <zorder>pushButton_rupees</zorder>
+   <zorder>pushButton_points</zorder>
    <zorder>pushButton_back</zorder>
    <zorder>label_project</zorder>
    <zorder>label_rate</zorder>

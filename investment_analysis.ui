@@ -97,7 +97,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; text-decoration: underline;&quot;&gt;Investment Analysis&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_reinstallation">
+   <widget class="QPushButton" name="pushButton_sell_shares">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -180,7 +180,7 @@
    <zorder>label_graph</zorder>
    <zorder>pushButton_back</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton_reinstallation</zorder>
+   <zorder>pushButton_sell_shares</zorder>
   </widget>
  </widget>
  <tabstops>

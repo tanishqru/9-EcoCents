@@ -264,7 +264,7 @@ font-weight:bold;</string>
    <widget class="QPushButton" name="pushButton_back">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>705</x>
       <y>600</y>
       <width>90</width>
       <height>67</height>
