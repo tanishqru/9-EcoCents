@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: "Robot", sans-serif;
+	background-image: url(signback.jpeg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.box1 {
+    backdrop-filter: blur(100px);
+    padding: 20px;
+	width: 80vw;
+	position: absolute;
+	border-radius: 80px;
+	box-shadow: 0px 0px 5px 3px rgb(221, 130, 240);
+	z-index: 1;
+	display:block;
+	flex-direction: row;
+	opacity:0.8;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box2 {
+    backdrop-filter: blur(100px);
+    padding: 20px;
+    color: white;
+	width: 80vw;
+	position: absolute;
+	border-radius: 80px;
+	box-shadow: 0px 0px 5px 3px rgb(245, 195, 255);
+	z-index: 1;
+	display:none;
+	flex-direction: row;
+	opacity:0.8;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1, h3{
+    color: white;
+    letter-spacing: -2px;
+}
+
+.symbol{
+	order:1;
+}
+
+.bar{
+	order:2;
+    justify-content: center;
+    align-items: center;
+}
+
+.writing{
+	order:3;
+	font-size: 1.5vw;
+}
+
+input{
+    color: white;
+    background-color: black;
+    margin-bottom: 4px; 
+    padding: 10px; 
+    width: 30%;
+    border: 2px solid rgb(245, 195, 255);
+}
+
+.sigin{
+    display: block !important;
+}
+
+button{
+    height: 30px;
+    width: 80px;
+    background-color: rgb(245, 195, 255);
+    border-radius: 10px;
+}
+
+button:hover{
+    box-shadow: 0px 0px 5px 3px rgb(245, 195, 255);
+}
+
+
+@media screen and (max-width:786px) {
+	.writing{
+        margin-top: -20vh;
+		margin-left: 0;
+		font-size: 4vw;
+	}
+
+    input{
+        width: 40vw;
+        padding: 5px;
+    }
+
+    .box1, .box2{
+        margin: 10px;
+    }
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="sign.css">
+</head>
+<body>
+    <div class="container">
+      <div class="box1 writing" id="signup">
+        <div class="signup">
+            <form action="" method="signup">
+              <center>
+               <h1>Eco-Cents</h1>
+               <h3>Sign Up</h3>
+               <label for="Name"></label><input style="border-radius: 20px;" type="text" id="name" name="Name" placeholder="Name"><br>
+               <label for="username"></label><input style="border-radius: 20px;" type="text" id="username" name="username" placeholder="username"><br>
+               <label for="Mobile number"></label><input style="border-radius: 20px;" type="text" id="name" name="Mobile number" placeholder="Mobile number"><br>
+               <label for="E-Mail Address"></label><input style="border-radius: 20px;" type="text" id="name" name="E-Mail Address" placeholder="E-Mail Address"><br>
+               <label for="password"></label><input style="border-radius: 20px;" type="password" id="name" name="Password" placeholder="Set Password"><br>
+               <label for="password"></label><input style="border-radius: 20px;" type="text" id="name" name="Password" placeholder="Confirm Password"><br>
+               <label for="dob"><font color=white size="4">DOB:</font></label><br><input style="border-radius: 20px;" type="date" id="dob" name="dob" placeholder="ddmmyyyy"><br>
+               <label for="referral"></label><input style="border-radius: 20px;" type="text" id="referral" name="referral" placeholder="Referral Code"><br>
+               <button type="submit">Sign Up</button>
+               <p><font color=white>Already have an account? </font></p>
+                <button type="button" onclick="showContent('signin', 'signup')">Sign up</button>
+              </center>
+            </form>
+        </div>
+      </div>
+      <div class="box2 writing" id="signin">
+        <div class="signin">
+            <form action="" method="signup">
+              <center>
+               <h1>Eco-Cents</h1>
+               <h3>Sign In</h3>
+               <label for="Username"></label><input style="border-radius: 20px;" type="text" id="name" name="Name" placeholder="UserName"><br>
+               <label for="password"></label><input style="border-radius: 20px;" type="text" id="name" name="Password" placeholder="Password"><br>
+               <p><font color=white><a href="" style="color:white">Forgot Password?</a></font></p>
+               <button type="submit">Sign In</button>
+               <p><font color=white>Don't have an account?</font></p>
+               <button type="button" onclick="showContent('signup', 'signin')">Sign up</button>
+              </center>
+            </form>
+        </div>
+      </div>
+    </div>
+    <script src="sign.js"></script>
+</body>
+</html>
