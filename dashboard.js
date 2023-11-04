@@ -21,6 +21,8 @@ function money(){ window.location.href="https://MoneyControl.com"; }
 function conomic(){ window.location.href="https://tradingeconomics.com/"; }
 function nse(){ window.location.href="https://www.nseindia.com/"; }
 
+/* data analysis */
+
 // Function to read and parse the CSV file
 function readCSV() {
     fetch('ADANIPORTS.csv') // Replace 'ADANIPORTS.csv' with the actual URL or file path
@@ -37,7 +39,7 @@ function parseCSV(csv) {
     var labels = [];
     var data = [];
     
-    for (var i = 1; i <= 1000 && i < lines.length; i++) {
+    for (var i = 1; i <= 10000 && i < lines.length; i++) {
         var parts = lines[i].split(',');
         if (parts.length >= 2) {
             var date = parts[0];
@@ -97,3 +99,36 @@ function createLineChart(labels, data) {
 }
 
 readCSV();
+
+/* explore companies */
+
+var xlsxFileLocation = 'book.xlsx';
+        function readAndDisplayXLSXData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', xlsxFileLocation, true);
+            xhr.responseType = 'arraybuffer';
+
+            xhr.onload = function (e) {
+                var arrayBuffer = xhr.response;
+                var data = new Uint8Array(arrayBuffer);
+                var workbook = XLSX.read(data, { type: 'array' });
+                var sheetName = workbook.SheetNames[0]; // Assuming you have only one sheet
+                var sheet = workbook.Sheets[sheetName];
+                var jsonData = XLSX.utils.sheet_to_json(sheet);
+
+                var table = document.getElementById('dataTable');
+                var tbody = table.getElementsByTagName('tbody')[0];
+
+                jsonData.forEach(function (row) {
+                    var newRow = tbody.insertRow(tbody.rows.length);
+                    Object.keys(row).forEach(function (key, index) {
+                    var cell = newRow.insertCell(index);
+                    cell.innerHTML = row[key];
+                    });
+                });
+            };
+
+            xhr.send();
+        }
+
+        readAndDisplayXLSXData();

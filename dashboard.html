@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
 
 </head>
 <body>
@@ -50,14 +51,13 @@
         <div class="pagelinks">
             <br><br><br>
             <div class="sidebar s1"><button type="button" onclick="showContent('dashboard')" ><span class="material-symbols-outlined">person</span>Dashboard</button><br></div>
-            <div class="sidebar s2"><button type="button" onclick="showContent('explore')" ><span class="material-symbols-outlined">apps</span>Explore Companies</button></div>
+            <div class="sidebar s2"><button type="button" onclick="showContent('expcom')" ><span class="material-symbols-outlined">apps</span>Explore Companies</button></div>
             <div class="sidebar s3"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">score</span>Shares</button></div>
             <div class="sidebar s4"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">local_atm</span>Invests</button></div>
             <div class="sidebar s5"><button type="button" onclick="showContent('investana')" ><span class="material-symbols-outlined">trending_up</span>Investment Analysis</button></div>
             <div class="sidebar s6"><button type="button" onclick="showContent('course')"><span class="material-symbols-outlined">tv_signin</span>Courses</button></div>
             <div class="sidebar s7"><button type="button" onclick="showContent('commun')"><span class="material-symbols-outlined">crowdsource</span>Communities</button></div>
-            <div class="sidebar s8"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">receipt_long</span>Transaction History</button></div>
-            <div class="sidebar s10"><button type="button" onclick="showContent('bills')"><span class="material-symbols-outlined">fullscreen</span>Add Bills</button></div>
+            <div class="sidebar s10"><button type="button" onclick="showContent('bills')"><span class="material-symbols-outlined">receipt_long</span>Transaction History</button></div>
             <div class="sidebar s12"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">groups_2</span>Earn & Refer</button></div>
         </div>
         <!-- the middle part of content -->
@@ -66,9 +66,23 @@
             <div class="mid dash" id="dashboard">
                 dashboard
             </div>
-            <!-- explore page -->
-            <div class="mid" id="explore">
-                explore
+            <!-- explore companies -->
+            <div class = "mid expcom" id="expcom">
+                <h1>Stock Market</h1>
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Project Name</th>
+                            <th>Company Name</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                            <th>No of Shares</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button>Wanna Buy a stock? <br>click me</button>
             </div>
             <!-- investment analysis -->
             <div class="mid investana" id="investana">
@@ -83,9 +97,9 @@
                     </thead>
                     <tbody>
                     </tbody>
-                </table>
-                
+                </table>               
             </div>
+            
             <!-- Courses -->
             <div class="mid course" id="course">
                 <h1>Courses</h1>
