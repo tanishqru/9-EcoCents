@@ -9,8 +9,10 @@ body{
 /* the navbar */
 .navbar-dash{
     z-index: 4;
+    width: 100%;
+    position: fixed;
     background-color: #EBEFF2;
-    height: 7vh;
+    height: 70px;
     display: flex;
     justify-content: space-between;
 }
@@ -20,7 +22,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 12vw;
+    width: 15.5vw;
     background-color: white;
     height: 100%;
 }
@@ -52,60 +54,11 @@ body{
 
 /* middle gap */
 .space{
-    width: 46vw;
+    width: 80vw !important;
 }
-
-/* the search section */
-.search{
-    width: 12vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-/* search container */
-.searchplace{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-}
-
-
-.searchplace input{
-    width: 90%;
-    height: 48%;
-    margin: 0px;
-    padding: 0px;
-    background-color: #E2E6EA;
-    border-top-left-radius: 3vw;
-    border-bottom-left-radius: 3vw;
-    border : none;
-}
-.searchplace span{
-    display: flex;
-    align-items: center;
-    font-size: 1vw; /*  */
-    color: black;
-    background-color: #e2e6ea;
-    border-top-right-radius: 3vw;
-    height: 100%;
-    width: 100%;
-    border-bottom-right-radius: 3vw;
-}
-
-.searchplace button{
-    background-color: transparent;
-    border : none;
-    width: 20%;
-    height: 48%;
-    padding: 0px;
-}
-
 
 .profile{
-    width: 12vw;
+    width: 20vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -118,7 +71,7 @@ body{
 }
 
 .notifi span{
-    font-size: 1vw; /*  */
+    font-size: 2vw; 
     display: flex;
     justify-content: space-evenly;
 }
@@ -133,13 +86,13 @@ body{
 .log span{
     width: 30%;
     display: flex;
-    font-size: 1vw; /*  */
+    font-size: 2vw; /*  */
     justify-content: space-evenly;
 }
 
 .log p{
-    width: 80%;
-    font-size: 1vw; /*  */
+    width: 90%;
+    font-size: 2vw; /*  */
 }
 
 .log:hover .dropcontent {
@@ -196,6 +149,7 @@ body{
 .bodycont {
     position: relative !important;
     display: flex;
+    top: 7vh;
     flex-direction: row;
 }
 

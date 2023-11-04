@@ -335,7 +335,7 @@
      <rect>
       <x>290</x>
       <y>270</y>
-      <width>491</width>
+      <width>501</width>
       <height>60</height>
      </rect>
     </property>
@@ -347,13 +347,13 @@
     </property>
     <property name="minimumSize">
      <size>
-      <width>0</width>
-      <height>0</height>
+      <width>501</width>
+      <height>60</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>788</width>
+      <width>501</width>
       <height>60</height>
      </size>
     </property>
