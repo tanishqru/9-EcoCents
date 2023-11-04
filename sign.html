@@ -10,21 +10,20 @@
     <div class="container">
       <div class="box1 writing" id="signup">
         <div class="signup">
-            <form action="" method="signup">
+            <form action="dashboard.html" method="signup" onsubmit="return validatePassword()">
               <center>
                <h1>Eco-Cents</h1>
                <h3>Sign Up</h3>
-               <label for="Name"></label><input style="border-radius: 20px;" type="text" id="name" name="Name" placeholder="Name"><br>
-               <label for="username"></label><input style="border-radius: 20px;" type="text" id="username" name="username" placeholder="username"><br>
-               <label for="Mobile number"></label><input style="border-radius: 20px;" type="text" id="name" name="Mobile number" placeholder="Mobile number"><br>
-               <label for="E-Mail Address"></label><input style="border-radius: 20px;" type="text" id="name" name="E-Mail Address" placeholder="E-Mail Address"><br>
-               <label for="password"></label><input style="border-radius: 20px;" type="password" id="name" name="Password" placeholder="Set Password"><br>
-               <label for="password"></label><input style="border-radius: 20px;" type="text" id="name" name="Password" placeholder="Confirm Password"><br>
-               <label for="dob"><font color=white size="4">DOB:</font></label><br><input style="border-radius: 20px;" type="date" id="dob" name="dob" placeholder="ddmmyyyy"><br>
-               <label for="referral"></label><input style="border-radius: 20px;" type="text" id="referral" name="referral" placeholder="Referral Code"><br>
+               <label for="Name"></label><input style="border-radius: 20px;" type="text" id="name" name="Name" placeholder="Name" required><br>
+               <label for="Mobile number"></label><input style="border-radius: 20px;" type="text" id="mobilenumber" name="Mobile number" placeholder="Mobile number" required><br>
+               <label for="E-Mail Address"></label><input style="border-radius: 20px;" type="email" id="email" name="E-Mail Address" placeholder="E-Mail Address" required><br>
+               <label for="password"></label><input style="border-radius: 20px;" type="password" id="password" name="Password" placeholder="Set Password" required><br>
+               <label for="confirmPassword"></label><input style="border-radius: 20px;" type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm Password" required><br>
+               <label for="dob"><font color=white size="4">DOB:</font></label><br><input style="border-radius: 20px;" type="date" id="dob" name="dob" placeholder="ddmmyyyy" required><br>
+               <label for="referral"></label><input style="border-radius: 20px;" type="text" id="referral" name="referral" placeholder="Referral Code (optional)"><br>
                <button type="submit">Sign Up</button>
                <p><font color=white>Already have an account? </font></p>
-                <button type="button" onclick="showContent('signin', 'signup')">Sign up</button>
+               <button type="button" onclick="showContent('signin', 'signup')">Sign In</button>
               </center>
             </form>
         </div>
@@ -35,8 +34,8 @@
               <center>
                <h1>Eco-Cents</h1>
                <h3>Sign In</h3>
-               <label for="Username"></label><input style="border-radius: 20px;" type="text" id="name" name="Name" placeholder="UserName"><br>
-               <label for="password"></label><input style="border-radius: 20px;" type="text" id="name" name="Password" placeholder="Password"><br>
+               <label for="Username"></label><input style="border-radius: 20px;" type="text" id="username" name="Username" placeholder="Username" required><br>
+               <label for="password"></label><input style="border-radius: 20px;" type="password" id="signinPassword" name="Password" placeholder="Password" required><br>
                <p><font color=white><a href="" style="color:white">Forgot Password?</a></font></p>
                <button type="submit">Sign In</button>
                <p><font color=white>Don't have an account?</font></p>
