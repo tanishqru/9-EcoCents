@@ -134,15 +134,5 @@ var xlsxFileLocation = 'book.xlsx';
         readAndDisplayXLSXData();
 
   
-var outputDiv = document.getElementById("output");
-fetch('cp.py')
-.then(response => response.text())
-.then(data => {
-    // Set the output content to the data received from the Python script
-    outputDiv.textContent = data;
-})
-.catch(error => {
-    // Handle errors, if any
-    outputDiv.textContent = 'Error occurred: ' + error.message;
-});
-    
+
+

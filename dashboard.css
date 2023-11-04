@@ -183,6 +183,8 @@ button{
     height: 98%;
     background-color: transparent;
 }
+
+/* middle of the page content*/
 .content-of-page {
     margin-left: 12vw;
     width: 87vw;
@@ -258,17 +260,21 @@ button{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.expcom tr{
+    text-align: center;
+}
+
+.expcom th{
+    padding: 5px;
+}
+
 .expcom button{
     margin-top: 2vw;
     margin-left: 60vw;
 }
 
-.expcom table, th{
-    border: 1px solid black;
-    padding: 2px;
-}
-
 .expcom table{
+    padding: 2px;
     margin: 3px !important;
     width: 80%;
 }

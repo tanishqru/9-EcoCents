@@ -264,7 +264,7 @@
      <string>&lt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushbutton_login">
+   <widget class="QPushButton" name="pushButton_login">
     <property name="geometry">
      <rect>
       <x>6</x>
@@ -329,7 +329,7 @@
    <zorder>lineEdit_password</zorder>
    <zorder>password_view</zorder>
    <zorder>pushButton_back</zorder>
-   <zorder>pushbutton_login</zorder>
+   <zorder>pushButton_login</zorder>
   </widget>
  </widget>
  <resources/>
