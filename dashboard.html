@@ -49,15 +49,30 @@
             <div class="sidebar s4"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">local_atm</span>Invests</button></div>
             <div class="sidebar s5"><button type="button" onclick="showContent('investana')" ><span class="material-symbols-outlined">trending_up</span>Investment Analysis</button></div>
             <div class="sidebar s6"><button type="button" onclick="showContent('course')"><span class="material-symbols-outlined">tv_signin</span>Courses</button></div>
-            <div class="sidebar s7"><button type="button" onclick="showContent('newsg')"><span class="material-symbols-outlined">crowdsource</span>News Groups</button></div>
+            <div class="sidebar s7"><button type="button" onclick="showContent('commun')"><span class="material-symbols-outlined">crowdsource</span>Communities</button></div>
             <div class="sidebar s10"><button type="button" onclick="showContent('bills')"><span class="material-symbols-outlined">receipt_long</span>Transaction History</button></div>
             <div class="sidebar s12"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">groups_2</span>Earn & Refer</button></div>
         </div>
         <!-- the middle part of content -->
         <div class="content-of-page">
+            <div id="output"></div>
             <!-- the dashbaord main page -->
             <div class="mid dash" id="dashboard">
-                <!--cfgvbhjnhugtfc vbnhgtfcv b-->
+                <div class = "namephemail">
+                    <p>Name</p>
+                    <p>E-mail</p>
+                    <p>phone-number</p>
+                </div>
+                <div class = "dash4block">
+                    <div class = "nofstacks">stocks</div>
+                    <div class = "nofstacks">amount</div>
+                    <div class = "nofstacks">rate</div>
+                    <div class = "nofstacks cm"><p>money</p><p>credits</p></div>
+                </div>
+
+
+
+
             </div>
             <!-- explore companies -->
             <div class = "mid expcom" id="expcom">
@@ -107,9 +122,9 @@
         
                 </div>
             </div>
-            <!-- explore newsgroup -->
+            <!-- explore news groups -->
             <div class="mid newsg" id="newsg">
-                <h1>Explore Newsgroups</h1>
+                <h1>Explore NEWS GROUP</h1>
                 <Br>
                 <div class = "newslink">
                     <button class = "ng_investindia blocks" onclick="investi()"></button>
@@ -140,3 +155,5 @@
     <script src="dashboard.js"></script>
 </body>
 </html>
+
+<a href="javascript:void(0);" onclick="showContent('')"></a>

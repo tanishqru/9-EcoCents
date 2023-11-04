@@ -124,24 +124,8 @@ body{
     text-align: left;
 }
 
-.setting{
-    width: 4.5vw;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
-.setting button{
-    height: 70%;
-    width: 70%;
-    border : none;
-    background-color: transparent;
-}
 
-.setting span{
-    color: black;
-    font-size: 1vw; /*  */
-}
 /* end of navbar */
 
 /* body below navbar */
@@ -201,7 +185,7 @@ button{
 }
 .content-of-page {
     margin-left: 12vw;
-    width: 90vw;
+    width: 87vw;
     height: 95%;
     background-color: #f4f4f4;
     display: flex;
@@ -218,7 +202,46 @@ button{
 }
 
 .dash{
-    display: block;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    padding: 2vw;
+    width: 92%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.namephemail{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.namephemail p{
+    width: 25vw;
+}
+
+.dash4block{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.dash4block div{
+    width: 18vw;
+    height: 18vw;
+    background-color: #ccc;
+    margin: 1vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cm{
+    flex-direction: column;
 }
 
 /* explore companies */
@@ -306,7 +329,7 @@ button{
     background-image: url(nse.png);
 }
 
-/* newsgroup */
+/* news groups */
 
 .newsg {
     background-color: #ffffff;
