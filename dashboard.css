@@ -215,7 +215,7 @@ button{
 }
 
 .namephemail{
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -225,7 +225,7 @@ button{
 }
 
 .dash4block{
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -235,7 +235,7 @@ button{
     height: 18vw;
     background-color: #ccc;
     margin: 1vw;
-    display: flex;
+    display: flex !important;
     justify-content: space-evenly;
     align-items: center;
 }

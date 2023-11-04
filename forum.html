@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Forum</title>
+</head>
+<body>
+  <div id="chat"></div>
+  <input type="text" id="message" placeholder="Type a message">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    function sendMessage() {
+      const message = document.getElementById('message').value;
+
+      if (message) {
+        // Send the message to the server
+        fetch('/send-message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              // Clear the message input
+              document.getElementById('message').value = '';
+            }
+          });
+      }
+    }
+    
+    const express = require('express');
+const app = express();
+const server = require require('http').Server(app);
+
+// Enable body parser for handling POST requests
+app.use(express.json());
+
+// Store chat data
+const chatData = [];
+
+// Define a limit for the number of stored chats
+const chatLimit = 1000;
+
+// API endpoint to send and receive messages
+app.post('/send-message', (req, res) => {
+  const { message } = req.body;
+
+  if (message) {
+    // Add the new message to the chatData
+    chatData.push({ message, timestamp: new Date() });
+
+    // Remove older messages if the chat limit is exceeded
+    if (chatData.length > chatLimit) {
+      chatData.splice(0, chatData.length - chatLimit);
+    }
+
+    // Save chat data to a CSV file (you need to implement this)
+    // You can use a CSV library like 'csv-writer' to write to a CSV file
+
+    res.status(200).json({ success: true });
+  } else {
+    res.status(400).json({ error: 'Message is required' });
+  }
+});
+
+// Serve static HTML page
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+// Start the server
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+  </script>
+</body>
+</html>
+S
