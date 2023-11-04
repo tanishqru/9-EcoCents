@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>SWEEP</string>
+   <string>Eco-Cents</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -221,7 +221,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Eco-Cents</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#55aa00;&quot;&gt;Eco-Cents&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
