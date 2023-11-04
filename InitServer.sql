@@ -1,23 +1,21 @@
+DROP USER admin_ecocents@localhost;
+FLUSH PRIVILEGES;
 CREATE USER 'admin_ecocents'@'localhost' IDENTIFIED BY 'admin@password@ecocents';
 DROP DATABASE IF EXISTS ecocents;
 CREATE DATABASE ecocents;
 GRANT ALL PRIVILEGES ON ecocents.* TO 'admin_ecocents'@'localhost';
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 
+USE ecocents;
 -- Users table 
-CREATE TABLE ecocents.users (
-    uid INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE users (
+    uid INT PRIMARY KEY,
     name VARCHAR(255),
-    phone INT,
-    emailid VARCHAR(255),
-    dob DATE,
-    username VARCHAR(255),
     password VARCHAR(255),
-    used_ref_code INT,
-    points INT, -- New column for points
-    money FLOAT, -- New column for money
-    FOREIGN KEY (uid) REFERENCES ecocents.points(uid), -- Link to balance_points
-    FOREIGN KEY (uid) REFERENCES ecocents.money(uid) -- Link to balance_money
+    emailid VARCHAR(255),
+    phone INT,
+    points INT DEFAULT NULL, -- New column for points
+    money FLOAT DEFAULT NULL-- New column for money
 );
 
 
@@ -67,7 +65,7 @@ CREATE TABLE bills (
 );
 
 --points table
-CREATE TABLE ecocents.points (
+CREATE TABLE Points (
     points_id INT AUTO_INCREMENT PRIMARY KEY,
     uid INT,
     initial_points INT DEFAULT 1000,
@@ -77,7 +75,7 @@ CREATE TABLE ecocents.points (
 );
 
 -- Create the Money table
-CREATE TABLE ecocents.money (
+CREATE TABLE Money (
     money_id INT AUTO_INCREMENT PRIMARY KEY,
     uid INT,
     initial_money FLOAT DEFAULT 0,

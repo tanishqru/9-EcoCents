@@ -1,8 +1,13 @@
 import eel
-import pandas as pd
+
+
+eel.init("")
+
 
 @eel.expose
 def dataf():
+    import csv
+    import pandas as pd
     df = pd.read_excel("book.xlsx")
     c = list(df["company_name"]) 
     p = list(df["project_name"])
@@ -13,4 +18,10 @@ def dataf():
         for row in zip(*d.values()):
             csv_writer.writerow(row)
 
+def uniquerefergen():
+    import csv
+    import pandas as pd
+    df = pd.read_excel("user.xlsx")
+    referal_id = list(df["refer_id"])
+    return referal_id
 eel.start("index.html")

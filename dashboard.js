@@ -1,3 +1,10 @@
+// date and time
+n = new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = d + "/" + m + "/" + y
+
 /* this is the page selector or u can say the sidebar buttons */
 function showContent(contentId) {
     // Hide all content divs
@@ -24,15 +31,15 @@ function nse(){ window.location.href="https://www.nseindia.com/"; }
 /* data analysis */
 
 // Function to read and parse the CSV file
-function readCSV() {
+function readCSVa() {
     fetch('ADANIPORTS.csv') // Replace 'ADANIPORTS.csv' with the actual URL or file path
         .then(response => response.text())
-        .then(parseCSV)
+        .then(parseCSVa)
         .catch(error => console.error('Error loading CSV data:', error));
 }
 
 // Function to parse the CSV data
-function parseCSV(csv) {
+function parseCSVa(csv) {
     var lines = csv.split('\n');
     var tableBody = document.querySelector('#csvTable tbody');
     
@@ -57,10 +64,10 @@ function parseCSV(csv) {
         }
     }
 
-    createLineChart(labels, data);
+    createLineCharta(labels, data);
 }
 
-function createLineChart(labels, data) {
+function createLineCharta(labels, data) {
     var ctx = document.getElementById('lineChart').getContext('2d');
     
     var chart = new Chart(ctx, {
@@ -98,7 +105,83 @@ function createLineChart(labels, data) {
     });
 }
 
+readCSVa();
+
+/* second graph */
+
+// Function to read and parse the CSV file
+function readCSV() {
+    fetch('AMZN.csv') // Replace 'AMZN.csv' with the actual URL or file path
+        .then(response => response.text())
+        .then(parseCSV)
+        .catch(error => console.error('Error loading CSV data:', error));
+}
+
+// Function to parse the CSV data
+function parseCSV(csv) {
+    var lines = csv.split('\n');
+    var tableBody = document.querySelector('#csvTable tbody');
+
+    var labels = [];
+    var data = [];
+
+    for (var i = 1; i < lines.length; i++) {
+        var parts = lines[i].split(',');
+        if (parts.length === 7) {
+            var date = parts[0];
+            var close = parseFloat(parts[5]); // Close price in the 6th column (index 5)
+
+            var row = tableBody.insertRow();
+            var dateCell = row.insertCell(0);
+            var closeCell = row.insertCell(1);
+
+            dateCell.innerHTML = date;
+            closeCell.innerHTML = close;
+
+            labels.push(date);
+            data.push(close);
+        }
+    }
+
+    createLineChart(labels, data);
+}
+
+function createLineChart(labels, data) {
+    var ctx = document.getElementById('lineCharta').getContext('2d');
+
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Close Price',
+                data: data,
+                borderColor: 'rgba(0, 119, 204, 1)',
+                borderWidth: 1,
+                pointRadius: 0, // Change to adjust the point size
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date',
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Close Price',
+                    },
+                },
+            },
+        },
+    });
+}
+
 readCSV();
+
 
 /* explore companies */
 
@@ -133,6 +216,52 @@ var xlsxFileLocation = 'book.xlsx';
 
         readAndDisplayXLSXData();
 
-  
+// refer and earn
+
+function redirectToWhatsApp() {
+    var phonenumber = document.getElementById("mn").value;
+    var whatsappUrl = 'https://wa.me/' + 91+ phonenumber + '?text=Hello, this is the pre-filled message!';
+    window.location.href = whatsappUrl;
+}
 
 
+// compro
+
+// Function to read and parse the CSV file
+function readCSVb() {
+    fetch('cp.csv') // Replace 'ADANIPORTS.csv' with the actual URL or file path
+        .then(response => response.text())
+        .then(parseCSVb)
+        .catch(error => console.error('Error loading CSV data:', error));
+}
+
+// Function to parse the CSV data
+function parseCSVb(csv) {
+    var lines = csv.split('\n');
+    var tableBody = document.querySelector('#compro tbody');
+    
+    var labels = [];
+    var data = [];
+    
+    for (var i = 1; i <= 10 && i < lines.length; i++) {
+        var parts = lines[i].split(',');
+        if (parts.length >= 2) {
+            var date = parts[0];
+            var close = parts[1]; 
+            
+            var row = tableBody.insertRow();
+            var dateCell = row.insertCell(0);
+            var closeCell = row.insertCell(1);
+            
+            dateCell.innerHTML = date;
+            closeCell.innerHTML = close;
+            
+            labels.push(date);
+            data.push(close);
+        }
+    }
+
+    createLineCharta(labels, data);
+}
+
+readCSVb();

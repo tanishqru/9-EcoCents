@@ -250,7 +250,7 @@ button{
 
 .expcom {
     background-color: #ffffff;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-top: 2vw;
@@ -268,9 +268,13 @@ button{
     padding: 5px;
 }
 
-.expcom button{
+.expcom button, .buyst button{
+    color: white !important;
+    height: 35px;
+    width: 20%;
+    background-color: grey;
+    border: 1px solid black;
     margin-top: 2vw;
-    margin-left: 60vw;
 }
 
 .expcom table{
@@ -279,6 +283,17 @@ button{
     width: 80%;
 }
 
+/* form */
+
+.buyst{
+    padding: 30px;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: left !important;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Courses */
 .course {
@@ -466,6 +481,49 @@ input[type="file"] {
     background-color: #45a049;
 }
 
+/* refer and earn */
+.ref {
+    background-color: #ffffff;
+    justify-content: space-evenly;
+    flex-direction: column !important;
+    align-items: center;
+    margin-top: 2vw;
+    padding: 2vw;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imgrefer{
+    width: 20vw;
+    height: 20vw;
+    background-image: url(REFER.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ref input{
+    visibility: collapse;
+}
+
+.ref button{
+    width: 300px;
+}
+
+.wb{
+    margin-bottom: 2vw;
+    background-color: #25d366;
+    border-radius: 15px;
+    height: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.wb span{
+    padding-right: 4px;
+}
+
 @media only screen and (max-width : 1040px ) {
     
     /* the navbar */
@@ -498,5 +556,26 @@ input[type="file"] {
         font-size: 4vw;
     }
 
+    .content-of-page{
+        width: 80vw;
+        margin-left: 18vw;
+    }
 
+    .mid{
+        top: 15vw;
+    }
+
+    .dash4block, .namephemail{
+        flex-direction: column;
+    }
+
+    .expcom{
+        overflow-x: auto;
+    }
+
+    iframe{
+        width: 80%;
+        height: auto;
+    }
 }
+

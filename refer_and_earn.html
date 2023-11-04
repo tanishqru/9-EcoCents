@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="refer_and_earn.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class = "refer">
+        <h1>REFER AND EARN</h1>
+        <div class = "imgrefer"></div>
+        <input id = "mn">
+        <button class = "wb" onclick="redirectToWhatsApp()">
+            <span class="material-symbols-outlined">forum</span>
+            REFER TO THIS NUMBER
+        </button>
+        <script>
+            function redirectToWhatsApp() {
+                var phonenumber = document.getElementById("mn").value;
+                var whatsappUrl = 'https://wa.me/' + 91+ phonenumber + '?text=Hello, this is the pre-filled message!';
+                window.location.href = whatsappUrl;
+            }
+          </script>
+    </div>
+</body>
+</html>
