@@ -2,10 +2,10 @@ CREATE USER 'admin_ecocents'@'localhost' IDENTIFIED BY 'admin@password@ecocents'
 DROP DATABASE IF EXISTS ecocents;
 CREATE DATABASE ecocents;
 GRANT ALL PRIVILEGES ON ecocents.* TO 'admin_ecocents'@'localhost';
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 
--- Users table
-CREATE TABLE users (
+-- Users table 
+CREATE TABLE ecocents.users (
     uid INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     phone INT,
@@ -13,10 +13,15 @@ CREATE TABLE users (
     dob DATE,
     username VARCHAR(255),
     password VARCHAR(255),
-    used_ref_code INT
+    used_ref_code INT,
+    points INT, -- New column for points
+    money FLOAT, -- New column for money
+    FOREIGN KEY (uid) REFERENCES ecocents.points(uid), -- Link to balance_points
+    FOREIGN KEY (uid) REFERENCES ecocents.money(uid) -- Link to balance_money
 );
 
--- Project table
+
+-- Porject table
 CREATE TABLE project (
     project_id INT AUTO_INCREMENT PRIMARY KEY,
     project_name VARCHAR(255),
@@ -50,7 +55,6 @@ CREATE TABLE share_purchase (
     FOREIGN KEY (share_id) REFERENCES share(share_id)
 );
 
--- Bills table
 CREATE TABLE bills (
     bill_id INT AUTO_INCREMENT PRIMARY KEY,
     uid INT,
@@ -62,16 +66,23 @@ CREATE TABLE bills (
     FOREIGN KEY (share_purchase_id) REFERENCES share_purchase(share_purchase_id)
 );
 
+--points table
+CREATE TABLE ecocents.points (
+    points_id INT AUTO_INCREMENT PRIMARY KEY,
+    uid INT,
+    initial_points INT DEFAULT 1000,
+    points_credited INT,
+    points_debited INT,
+    balance_points INT
+);
 
--- Trigger to update shares_available in the project table when a share is purchased
-DELIMITER //
-CREATE TRIGGER ecocents.update_shares_available
-AFTER INSERT ON ecocents.share_purchase
-FOR EACH ROW
-BEGIN
-    UPDATE ecocents.project
-    SET shares_available = shares_available - NEW.qty
-    WHERE project_id = NEW.share_id;
-END;
-//
-DELIMITER ;
+-- Create the Money table
+CREATE TABLE ecocents.money (
+    money_id INT AUTO_INCREMENT PRIMARY KEY,
+    uid INT,
+    initial_money FLOAT DEFAULT 0,
+    money_credited FLOAT,
+    money_debited FLOAT,
+    balance_money FLOAT
+);
+
