@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>SWEEP</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.jpg</normaloff>logo.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="lineEdit_repeatpassword">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>690</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:16pt;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Confirm password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_phnumber">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>788</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:16pt;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Phone number</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_password">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>490</y>
+      <width>690</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:16pt;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Set password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_register">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>690</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 24pt;
+font-weight:bold;</string>
+    </property>
+    <property name="text">
+     <string>Register</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cp_view">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>540</y>
+      <width>80</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>View.png</normaloff>View.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_username">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>788</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="placeholderText">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sp_view">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>490</y>
+      <width>80</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>View.png</normaloff>View.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>251</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>251</width>
+      <height>201</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>251</width>
+      <height>201</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>logo.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_back">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>600</y>
+      <width>90</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;&amp;lt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:20;
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_email">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>788</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>788</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16pt</string>
+    </property>
+    <property name="placeholderText">
+     <string>Email</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>911</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>800</width>
+      <height>600</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>background.jpeg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_referal">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>788</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16pt;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Referal Code (Optional)</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="date_birthEdit">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>360</y>
+      <width>271</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>71</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>271</width>
+      <height>71</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_date_birth">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>271</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>271</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>271</width>
+      <height>52</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>SourceCodeVF</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date Of Birth</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>lineEdit_repeatpassword</zorder>
+   <zorder>lineEdit_phnumber</zorder>
+   <zorder>lineEdit_password</zorder>
+   <zorder>pushButton_register</zorder>
+   <zorder>cp_view</zorder>
+   <zorder>lineEdit_username</zorder>
+   <zorder>sp_view</zorder>
+   <zorder>logo</zorder>
+   <zorder>pushButton_back</zorder>
+   <zorder>lineEdit_email</zorder>
+   <zorder>lineEdit_referal</zorder>
+   <zorder>date_birthEdit</zorder>
+   <zorder>label_date_birth</zorder>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_username</tabstop>
+  <tabstop>lineEdit_email</tabstop>
+  <tabstop>lineEdit_phnumber</tabstop>
+  <tabstop>lineEdit_password</tabstop>
+  <tabstop>sp_view</tabstop>
+  <tabstop>lineEdit_repeatpassword</tabstop>
+  <tabstop>cp_view</tabstop>
+  <tabstop>pushButton_register</tabstop>
+  <tabstop>pushButton_back</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
