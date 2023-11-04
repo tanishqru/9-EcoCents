@@ -336,7 +336,7 @@ button{
 }
 
 .commun button{
-    height: 100px;
+    height: 25vh;
     color: white;
 }
 
@@ -350,8 +350,8 @@ button{
 }
 
 .blocks{
-    width: 25vw;
-    height: 25vh;
+    width: 35vw;
+    height: 50%;
     margin: 1vw;
     background-color: black;
     border: none;
@@ -381,6 +381,23 @@ button{
 
 .nse{
     background-image: url(nse.png);
+}
+
+/* investment analysis */
+
+canvas{
+    height: 50% !important;
+}
+
+.investana table{
+    visibility: collapse;
+}
+
+.investana{
+    width: 80%;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
 }
 
 /* billing */

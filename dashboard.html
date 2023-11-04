@@ -7,6 +7,8 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <!-- the navigation bar -->
@@ -47,16 +49,16 @@
         <!-- the sidebar which links all pages -->
         <div class="pagelinks">
             <br><br><br>
-            <div class="sidebar s1"><button type="button" onclick="showContent('dashboard')" style="background-color: red;"><span class="material-symbols-outlined">person</span>Dashboard</button><br></div>
-            <div class="sidebar s2"><button type="button" onclick="showContent('explore')" style="background-color: red;"><span class="material-symbols-outlined">apps</span>Explore Companies</button></div>
-            <div class="sidebar s3"><button type="button" onclick="showContent('')" style="background-color: red;"><span class="material-symbols-outlined">score</span>Shares</button></div>
-            <div class="sidebar s4"><button type="button" onclick="showContent('')" style="background-color: red;"><span class="material-symbols-outlined">local_atm</span>Invests</button></div>
-            <div class="sidebar s5"><button type="button" onclick="showContent('')" style="background-color: red;"><span class="material-symbols-outlined">trending_up</span>Investment Analysis</button></div>
+            <div class="sidebar s1"><button type="button" onclick="showContent('dashboard')" ><span class="material-symbols-outlined">person</span>Dashboard</button><br></div>
+            <div class="sidebar s2"><button type="button" onclick="showContent('explore')" ><span class="material-symbols-outlined">apps</span>Explore Companies</button></div>
+            <div class="sidebar s3"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">score</span>Shares</button></div>
+            <div class="sidebar s4"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">local_atm</span>Invests</button></div>
+            <div class="sidebar s5"><button type="button" onclick="showContent('investana')" ><span class="material-symbols-outlined">trending_up</span>Investment Analysis</button></div>
             <div class="sidebar s6"><button type="button" onclick="showContent('course')"><span class="material-symbols-outlined">tv_signin</span>Courses</button></div>
             <div class="sidebar s7"><button type="button" onclick="showContent('commun')"><span class="material-symbols-outlined">crowdsource</span>Communities</button></div>
-            <div class="sidebar s8"><button type="button" onclick="showContent('')" style="background-color: red;"><span class="material-symbols-outlined">receipt_long</span>Transaction History</button></div>
+            <div class="sidebar s8"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">receipt_long</span>Transaction History</button></div>
             <div class="sidebar s10"><button type="button" onclick="showContent('bills')"><span class="material-symbols-outlined">fullscreen</span>Add Bills</button></div>
-            <div class="sidebar s12"><button type="button" onclick="showContent('')" style="background-color: red;"><span class="material-symbols-outlined">groups_2</span>Earn & Refer</button></div>
+            <div class="sidebar s12"><button type="button" onclick="showContent('')" ><span class="material-symbols-outlined">groups_2</span>Earn & Refer</button></div>
         </div>
         <!-- the middle part of content -->
         <div class="content-of-page">
@@ -67,6 +69,22 @@
             <!-- explore page -->
             <div class="mid" id="explore">
                 explore
+            </div>
+            <!-- investment analysis -->
+            <div class="mid investana" id="investana">
+                <h2>Investment Analysis</h2>
+                <canvas id="lineChart"></canvas>
+                <table id="csvTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Close</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                
             </div>
             <!-- Courses -->
             <div class="mid course" id="course">
