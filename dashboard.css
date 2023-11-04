@@ -544,12 +544,12 @@ input[type="file"] {
     }
 
     /* the sidebar */
-    button{
+    .pagelinks button{
         font-size: 0px;
     }
 
     .pagelinks{
-        width: 15.5vw;
+        width: 11.5vw;
     }
 
     .pagelinks span{
@@ -558,7 +558,7 @@ input[type="file"] {
 
     .content-of-page{
         width: 80vw;
-        margin-left: 18vw;
+        margin-left: 15vw;
     }
 
     .mid{

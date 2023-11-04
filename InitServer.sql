@@ -7,80 +7,53 @@ GRANT ALL PRIVILEGES ON ecocents.* TO 'admin_ecocents'@'localhost';
 FLUSH PRIVILEGES;
 
 USE ecocents;
--- Users table 
+
+-- Create the 'user' table with emailid as the primary key
 CREATE TABLE users (
-    uid INT PRIMARY KEY,
+    emailid VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255),
     password VARCHAR(255),
-    emailid VARCHAR(255),
-    phone INT,
-    points INT DEFAULT NULL, -- New column for points
-    money FLOAT DEFAULT NULL-- New column for money
+    phone INT
 );
 
-
--- Porject table
+-- Create the 'project' table
 CREATE TABLE project (
-    project_id INT AUTO_INCREMENT PRIMARY KEY,
-    project_name VARCHAR(255),
-    company_name VARCHAR(255),
-    minimum_rate FLOAT,
-    maximum_rate FLOAT,
-    shares_available INT
-);
-
--- Share table
-CREATE TABLE share (
-    share_id INT AUTO_INCREMENT PRIMARY KEY,
-    company_name VARCHAR(255),
-    project_id INT,
+    proj_id VARCHAR(255),
+    proj_name VARCHAR(255),
+    comp_name VARCHAR(255),
+    minimum_rate INT,
     shares_available INT,
-    rate FLOAT,
-    FOREIGN KEY (project_id) REFERENCES project(project_id)
+    PRIMARY KEY (proj_id)
 );
 
--- Share purchase table
+-- Create the 'share' table
+CREATE TABLE share (
+    share_id VARCHAR(255) PRIMARY KEY,
+    project_id VARCHAR(255),
+    FOREIGN KEY (project_id) REFERENCES project(proj_id)
+);
+-- Create the 'share_purchase' table with emailid as the foreign key
 CREATE TABLE share_purchase (
-    share_purchase_id INT AUTO_INCREMENT PRIMARY KEY,
-    uid INT,
-    date_of_purchase DATE,
-    share_id INT,
-    rate FLOAT,
+    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_emailid VARCHAR(255), -- Use a different name for the foreign key column
+    share_id VARCHAR(255),
     qty INT,
-    total FLOAT,
-    total_analysis FLOAT,
-    FOREIGN KEY (uid) REFERENCES users(uid),
+    total INT,
+    FOREIGN KEY (user_emailid) REFERENCES users(emailid),
     FOREIGN KEY (share_id) REFERENCES share(share_id)
 );
 
-CREATE TABLE bills (
-    bill_id INT AUTO_INCREMENT PRIMARY KEY,
-    uid INT,
-    share_purchase_id INT,
-    date_of_purchase DATE,
-    bill_url VARCHAR(255),
-    amount FLOAT,
-    FOREIGN KEY (uid) REFERENCES users(uid),
-    FOREIGN KEY (share_purchase_id) REFERENCES share_purchase(share_purchase_id)
+-- Create the 'points' table with 'points' as the primary key
+CREATE TABLE points (
+    points INT PRIMARY KEY,
+    user_emailid VARCHAR(255), -- Use a different name for the foreign key column
+    FOREIGN KEY (user_emailid) REFERENCES users(emailid)
 );
 
---points table
-CREATE TABLE Points (
-    points_id INT AUTO_INCREMENT PRIMARY KEY,
-    uid INT,
-    initial_points INT DEFAULT 1000,
-    points_credited INT,
-    points_debited INT,
-    balance_points INT
-);
-
--- Create the Money table
-CREATE TABLE Money (
-    money_id INT AUTO_INCREMENT PRIMARY KEY,
-    uid INT,
-    initial_money FLOAT DEFAULT 0,
-    money_credited FLOAT,
-    money_debited FLOAT,
-    balance_money FLOAT
+-- Create the 'money' table with 'money' as the primary key
+CREATE TABLE money (
+    money INT PRIMARY KEY,
+    user_emailid VARCHAR(255), -- Use a different name for the foreign key column
+    FOREIGN KEY (user_emailid) REFERENCES users(emailid)
 );
 
