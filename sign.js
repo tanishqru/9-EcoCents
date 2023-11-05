@@ -17,12 +17,19 @@ function showContent(showId, hideId) {
 function validatePassword() {
     var setPassword = document.getElementById('password').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
-    var name = document.getElementById('name').value;
-    var mobilenumber = document.getElementById('mobilenumber').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var dob = document.getElementById('dob').value;
-    var referral = document.getElementById('referral').value;
+    if (setPassword !== confirmPassword) {
+        alert("Passwords do not match. Please make sure both passwords are the same.");
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission
+
+
+}
+
+
+function showContent() {
+    
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     function rc(){
         let randomCode = '';
@@ -36,13 +43,29 @@ function validatePassword() {
     while(randomCode in eel.uniquerefergen()){
         randomCode = rc();
     }
-    if (setPassword !== confirmPassword) {
-        alert("Passwords do not match. Please make sure both passwords are the same.");
-        return false; // Prevent form submission
+    var formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value,
+      mobilenumber: document.getElementById('mobilenumber').value,
+      dob: document.getElementById('dob').value,
+      referal: document.getElementById('referal').value,
+      randomCode: randomCode
+    };
+    // Get existing data from the Excel sheet (if any)
+    var workbook = XLSX.utils.book_new();
+    var sheet = XLSX.utils.json_to_sheet([formData]);
+  
+    // Append new data to the existing sheet
+    if (workbook.Sheets['Sheet1']) {
+      XLSX.utils.sheet_add_json(workbook.Sheets['Sheet1'], [formData], {origin: -1});
+    } else {
+      workbook.Sheets['Sheet1'] = sheet;
     }
-
-    return true; // Allow form submission
-
-
-}
-
+  
+    // Convert the workbook to a blob
+    var blob = XLSX.write(workbook, { bookType: 'xlsx', type: 'blob' });
+  
+    // Save the Excel file
+    saveAs(blob, 'user.xlsx');
+  }

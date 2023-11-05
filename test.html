@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Stock Investment</h2>
+        <label for="stock">Select Stock:</label>
+        <select id="stock">
+            <option value="AAPL">Apple Inc. (AAPL)</option>
+            <option value="GOOGL">Alphabet Inc. (GOOGL)</option>
+            <option value="MSFT">Microsoft Corporation (MSFT)</option>
+        </select><br><br>
+        <label for="shares">Number of Shares:</label>
+        <input type="number" id="shares" min="1" value="1"><br><br>
+        <button onclick="calculateInvestment()">Invest</button><br><br>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateInvestment() {
+            var stock = document.getElementById("stock").value;
+            var shares = parseInt(document.getElementById("shares").value);
+            var stockPrices = {
+                "AAPL": 150.25, // Replace these values with actual stock prices
+                "GOOGL": 2800.50,
+                "MSFT": 300.75
+            };
+
+            if (stockPrices[stock]) {
+                var totalPrice = stockPrices[stock] * shares;
+                document.getElementById("result").innerHTML = "Total Investment: $" + totalPrice.toFixed(2);
+            } else {
+                document.getElementById("result").innerHTML = "Invalid stock selection.";
+            }
+        }
+    </script>
+</body>
+</html>

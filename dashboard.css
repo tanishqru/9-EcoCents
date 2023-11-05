@@ -423,7 +423,7 @@ canvas{
     visibility: collapse;
 }
 
-.investana{
+.investana, .container{
     width: 80%;
     flex-direction: column;
     background-color: white;
@@ -522,6 +522,10 @@ input[type="file"] {
 
 .wb span{
     padding-right: 4px;
+}
+
+.container{
+    flex-direction: column;
 }
 
 @media only screen and (max-width : 1040px ) {
