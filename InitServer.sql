@@ -57,3 +57,11 @@ CREATE TABLE money (
     FOREIGN KEY (user_emailid) REFERENCES users(emailid)
 );
 
+CREATE TABLE analysis (
+    date_column DATE,
+    closing_value FLOAT
+);
+
+CREATE TABLE encryptdecrypt (
+    
+);

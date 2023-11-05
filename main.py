@@ -11,6 +11,7 @@
 
 import sys
 #pip install PyQt5
+import bcrypt
 import random  
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
@@ -19,12 +20,9 @@ from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QLineEdit, QWidg
 from PyQt5.QtGui import QIcon, QPixmap, QDesktopServices
 from PyQt5.QtCore import QUrl
 from validate_email import validate_email
-# pip install validate_email
 import matplotlib.pyplot as plt
 from io import BytesIO
 import mysql.connector 
-# pip install mysql-connector 
-# pip install pandas 
 from pandas.core.common import flatten
 #Email libraries
 import smtplib
@@ -149,6 +147,18 @@ class login_page(QMainWindow):
                     login_page.logged_in_username = self.lineEdit_username.text()
                     global in_username
                     in_username = login_page.logged_in_username
+
+                    # hashed_password = "hashed_password_from_database"
+                    # salt = "salt_from_database"
+
+                    # entered_password = "user_entered_password".encode('utf-8')
+                    # hashed_password_to_check = bcrypt.hashpw(entered_password, salt)
+
+                    # if hashed_password_to_check == stored_hashed_password:
+                        # --Passwords match, the login is successful
+                    # else:
+                        # --Passwords do not match
+
                     login_page.logged_in_password = self.lineEdit_password.text()
                     self.lineEdit_username.setText("")
                     self.lineEdit_password.setText("")
@@ -221,12 +231,17 @@ class register_page(QMainWindow):
             if validate_email(self.lineEdit_email.text()):
                 if self.lineEdit_username.text() not in loginpage_details:
 
-                    eight_digit_number = random.randint(10000000, 99999999)
-                    print(eight_digit_number)
                     phone_number = self.lineEdit_phnumber.text()
                     print(phone_number)
                     curs.execute(f"insert into users values('{self.lineEdit_email.text()}', '{self.lineEdit_username.text()}', '{self.lineEdit_password.text()}', {phone_number})")  
                     db.commit()
+                    #password = self.lineEdit_password.text()
+                    #print(password)
+                    #password = "user_password".encode('utf-8')
+                    #salt = bcrypt.gensalt()
+                    #hashed_password = bcrypt.hashpw(password, salt)
+                    # --Store the 'hashed_password' and 'salt' in your database
+
                     getLoginDetails()
                     self.lineEdit_username.setText("")
                     self.lineEdit_email.setText("")
@@ -357,6 +372,19 @@ class investment_page(QMainWindow):
         x = [1, 2, 3, 4, 5]
         y = [2, 4, 6, 8, 10]
 
+        #curs = connection.cursor()
+
+        # -- Execute the SQL query to select the date values
+        # query = "SELECT date_column FROM your_table;"
+        # curs.execute(query)
+
+        # -- Fetch the result
+        # date_results = cursor.fetchall()
+
+        # -- Display the date values
+        # for date in date_results:
+        # print(date[0])
+
         plt.plot(x, y)
         plt.xlabel("X-axis")
         plt.ylabel("Y-axis")
@@ -424,9 +452,6 @@ class transaction_page(QMainWindow):
         super(transaction_page, self).__init__()
         loadUi("transaction_page.ui", self)
         self.pushButton_back.clicked.connect(self.backbutton_clicked)
-#        self.pushButton_paytm.clicked.connect(self.paytmbutton_clicked)
-#        self.pushButton_upi.clicked.connect(self.upibutton_clicked)
-#        self.pushButton_netbank.clicked.connect(self.netbankbutton_clicked)
 
     def backbutton_clicked(self):
         widget.setCurrentIndex(3)
