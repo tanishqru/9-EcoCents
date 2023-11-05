@@ -13,7 +13,7 @@ CREATE TABLE users (
     emailid VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255),
     password VARCHAR(255),
-    phone INT
+    phone BIGINT
 );
 
 -- Create the 'project' table
