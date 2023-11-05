@@ -16,7 +16,8 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QLineEdit, QWidget, QFileDialog, QLabel, QMessageBox, QVBoxLayout
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtGui import QIcon, QPixmap, QDesktopServices
+from PyQt5.QtCore import QUrl
 from validate_email import validate_email
 # pip install validate_email
 import matplotlib.pyplot as plt
@@ -260,12 +261,12 @@ class home_page(QMainWindow):
         self.pushButton_logout.clicked.connect(self.are_you_sure)
 #        self.pushButton_profile.clicked.connect(self.gotoprofile)
 
-#        self.companies_button.clicked.connect(self.gotocompanies)
-#        self.investments_button.clicked.connect(self.gotoinvestments)
-#        self.courses_button.clicked.connect(self.gotocourses)
-#        self.newsgroup_button.clicked.connect(self.gotonewsgroup)
-#        self.transHistory_button.clicked.connect(self.gototransHistory)
-#        self.refer_button.clicked.connect(self.gotorefer)
+        self.companies_button.clicked.connect(self.gotocompanies)
+        self.investments_button.clicked.connect(self.gotoinvestments)
+        self.courses_button.clicked.connect(self.gotocourses)
+        self.newsgroup_button.clicked.connect(self.gotonewsgroup)
+        self.transHistory_button.clicked.connect(self.gototransHistory)
+        self.refer_button.clicked.connect(self.gotorefer)
 
     def are_you_sure(self):
         msg = QMessageBox()
@@ -287,19 +288,19 @@ class home_page(QMainWindow):
             pass
 
     def gotocompanies(self):
-        widget.setCurrentIndex(5)
+        widget.setCurrentIndex(4)
     
     def gotoinvestments(self):
-        widget.setCurrentIndex(6)
+        widget.setCurrentIndex(5)
 
     def gotocourses(self):
-        widget.setCurrentIndex(9)
+        widget.setCurrentIndex(6)
 
     def gotonewsgroup(self):
-        widget.setCurrentIndex(7)
+        widget.setCurrentIndex(11)
 
     def gototransHistory(self):
-        widget.setCurrentIndex(11)
+        widget.setCurrentIndex(7)
 
     def gotorefer(self):
         widget.setCurrentIndex(12)
@@ -331,53 +332,53 @@ class companies_page(QMainWindow):
         self.pushButton_16.clicked.connect(self.gototransaction)
 
     def backbutton_clicked(self):
-        widget.setCurrentIndex(0)
+        widget.setCurrentIndex(3)
 
     def gototransaction(self):
-        widget.setCurrentIndex(5)
+        widget.setCurrentIndex(7)
 
 # ---------------------------------------------------------investment_page------------------------------------------------------- #
 
 class investment_page(QMainWindow):
     def __init__(self) -> None :
         super(investment_page, self).__init__()
-        loadUi("investment_analysis.ui", self)
+        ui = loadUi("investment_analysis.ui", self)
         #menubar.self.menubar()
         #menubar.setNativeMenuBar(False)
         self.pushButton_back.clicked.connect(self.backbutton_clicked)
 #        self.pushButton_sell_shares.clicked.connect(self.gotoshares)
 
+        # Load your .ui file
+        #    app = QApplication(sys.argv)
+        #    window = QMainWindow()
+        #    ui = loadUi('your_ui_file.ui', baseinstance=window)
+
+        # Create a simple line graph with matplotlib
+        x = [1, 2, 3, 4, 5]
+        y = [2, 4, 6, 8, 10]
+
+        plt.plot(x, y)
+        plt.xlabel("X-axis")
+        plt.ylabel("Y-axis")
+        plt.title("Sample Line Plot")
+
+        # Save the matplotlib plot to a QPixmap
+        buf = BytesIO()
+        plt.savefig(buf, format='png')
+        pixmap = QPixmap()
+        pixmap.loadFromData(buf.getvalue())
+
+        # Set the QPixmap as the label's pixmap in the .ui file
+        ui.label_graph.setPixmap(pixmap)
+
+        # Show the main window
+        #window.show()
+
     def backbutton_clicked(self):
-        widget.setCurrentIndex(0)
+        widget.setCurrentIndex(3)
 
 #    def gotoshares(self):
 #        widget.setCurrentIndex(5)
-
-    # Load your .ui file
-    app = QApplication(sys.argv)
-    window = QMainWindow()
-    ui = loadUi('your_ui_file.ui', baseinstance=window)
-
-    # Create a simple line graph with matplotlib
-    x = [1, 2, 3, 4, 5]
-    y = [2, 4, 6, 8, 10]
-
-    plt.plot(x, y)
-    plt.xlabel("X-axis")
-    plt.ylabel("Y-axis")
-    plt.title("Sample Line Plot")
-
-    # Save the matplotlib plot to a QPixmap
-    buf = BytesIO()
-    plt.savefig(buf, format='png')
-    pixmap = QPixmap()
-    pixmap.loadFromData(buf.getvalue())
-
-    # Set the QPixmap as the label's pixmap in the .ui file
-    ui.graphLabel.setPixmap(pixmap)
-
-    # Show the main window
-    window.show()
 
 # ---------------------------------------------------------courses_page------------------------------------------------------- #
 
@@ -388,16 +389,33 @@ class courses_page(QMainWindow):
         #menubar.self.menubar()
         #menubar.setNativeMenuBar(False)
         self.pushButton_back.clicked.connect(self.backbutton_clicked)
-        self.pushButton_1.clicked.connect(self.gototransaction)
-        self.pushButton_2.clicked.connect(self.gototransaction)
-        self.pushButton_3.clicked.connect(self.gototransaction)
-        self.pushButton_4.clicked.connect(self.gototransaction)
+        self.pushButton_course1.clicked.connect(self.open_link1)
+        self.pushButton_course2.clicked.connect(self.open_link2)
+        self.pushButton_course3.clicked.connect(self.open_link3)
+        self.pushButton_course4.clicked.connect(self.open_link4)
         
     def backbutton_clicked(self):
-        widget.setCurrentIndex(0)
+        widget.setCurrentIndex(3)
 
-    def gototransaction(self):
-        widget.setCurrentIndex(5)
+    def open_link1(self):
+        url = QUrl("https://www.youtube.com/embed/3WI9RZODuag")
+        # Open the URL in the default web browser
+        QDesktopServices.openUrl(url)
+
+    def open_link2(self):
+        url = QUrl("https://www.youtube.com/embed/nP9IMTKIl2w")
+        # Open the URL in the default web browser
+        QDesktopServices.openUrl(url)
+
+    def open_link3(self):
+        url = QUrl("https://www.youtube.com/embed/wCHm5SdNO5U")
+        # Open the URL in the default web browser
+        QDesktopServices.openUrl(url)
+
+    def open_link4(self):
+        url = QUrl("https://www.youtube.com/embed/1jxh5AbIm6U")
+        # Open the URL in the default web browser
+        QDesktopServices.openUrl(url)
 
 # ------------------------------------------------------transactions_page-------------------------------------------------- #
 
@@ -411,7 +429,7 @@ class transaction_page(QMainWindow):
 #        self.pushButton_netbank.clicked.connect(self.netbankbutton_clicked)
 
     def backbutton_clicked(self):
-        widget.setCurrentIndex(4)
+        widget.setCurrentIndex(3)
 
 #    def paytmbutton_clicked(self):
 #        widget.setCurrentIndex(16)
@@ -461,10 +479,6 @@ class transaction_page(QMainWindow):
 
 app = QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
-widget.setMaximumHeight(600)
-widget.setMaximumWidth(800)
-widget.setMinimumHeight(600)
-widget.setMinimumWidth(800)
 
 login_register = loginregister()
 login = login_page()
